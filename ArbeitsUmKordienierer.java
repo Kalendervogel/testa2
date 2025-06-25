@@ -4,12 +4,12 @@ import java.io.IOException;
 
 import javax.imageio.*;
 
-public class Bitch {
-    public static BufferedImage loadmage(String banana ) {
+public class ArbeitsUmKordienierer {
+    public static BufferedImage loadmage(String Bildaufbewahrer ) {
     BufferedImage f1= null;
     String userDierectory = new File("").getAbsolutePath();
         try{
-            f1=ImageIO.read(new File(userDierectory+banana ) );
+            f1=ImageIO.read(new File(userDierectory+Bildaufbewahrer ) );
         }
         catch(IOException e){
             e.printStackTrace();

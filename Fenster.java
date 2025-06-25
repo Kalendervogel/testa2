@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Fenster extends JFrame {
-   private int pixelDistance =200; 
+   private int pixelDistance =200; //Distanc die die Maus von dem X entfernt ist bevor teleport
     
     public Fenster()
     {
@@ -13,7 +13,7 @@ public class Fenster extends JFrame {
         setTitle(" ");
         setUndecorated(true);
         setSize(480,350);
-        setIconImage(Bitch.loadmage("/rickrollicon.jpg"));
+        setIconImage(ArbeitsUmKordienierer.loadmage("/rickrollicon.jpg"));
         String userDirectory = new java.io.File("").getAbsolutePath();
         ImageIcon gif = new ImageIcon(userDirectory + "/rickroll.gif");
         JLabel gifContainer= new JLabel(gif); 
