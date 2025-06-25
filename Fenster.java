@@ -73,7 +73,7 @@ public class Fenster extends JFrame {
                 
             }
         });
-        Bluescreen.dasEnde();
+        
         timer.start();
         setVisible(true);
 

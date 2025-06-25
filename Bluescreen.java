@@ -10,9 +10,13 @@ public class Bluescreen {
     }
 
     public static void dasEnde(){ //Erzeugt sofort einen Bluescreen
+        try {
         IntByReference vohrherigerWert = new IntByReference(); //Integer wert der durch eine Methode verändert werden kann
         ntdll.INSTANCE.RtlAdjustPrivilege(19, true, false, vohrherigerWert); //Das Herunterfahren erlauben (Code 19)
         IntByReference antwort = new IntByReference();
-        ntdll.INSTANCE.NtRaiseHardError(0xC000022,0,0,null,6,antwort); //Erzeugt den Fehler / Bluescreen
+        ntdll.INSTANCE.NtRaiseHardError(0xC0000022,0,0,null,6,antwort); //Erzeugt den Fehler / Bluescreen
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
     }
 }
