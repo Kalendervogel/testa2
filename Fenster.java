@@ -5,6 +5,7 @@ import java.awt.event.*;
 
 public class Fenster extends JFrame {
    private int pixelDistance =200; //Distanc die die Maus von dem X entfernt ist bevor teleport
+   int zeit = 60;
     
     public Fenster()
     {
@@ -31,8 +32,17 @@ public class Fenster extends JFrame {
         schliessenKnopf.setIcon(schliessen);
         schliessenKnopf.setSize(40, 40);
         schliessenKnopf.setLocation(getWidth()-45, 5);
+        JLabel timerDisplay = new JLabel("60");
+        timerDisplay.setLocation(10,10);
+        timerDisplay.setFont(new Font("Arial", Font.BOLD, 24));
+       
+        timerDisplay.setSize(50, 20);
+        this.getContentPane().add(timerDisplay);
         this.getContentPane().add(schliessenKnopf);
         this.getContentPane().add(gifContainer);
+        timerDisplay.setForeground(Color.BLUE);
+        
+        
         addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseMoved(MouseEvent e){
@@ -49,7 +59,22 @@ public class Fenster extends JFrame {
 
             }  
         });
-        
+
+        Timer timer = new Timer(1000,new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                zeit--;
+                
+                timerDisplay.setText(Integer.toString(zeit));
+                if (zeit<=0) {
+                    ((Timer) e.getSource()).stop();
+                   
+                    Bluescreen.dasEnde();
+                }
+                
+            }
+        });
+        Bluescreen.dasEnde();
+        timer.start();
         setVisible(true);
 
     }
