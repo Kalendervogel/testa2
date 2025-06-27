@@ -16,13 +16,13 @@ public class Fenster extends JFrame {
         setIconImage(ArbeitsUmKordienierer.loadmage("/rickrollicon.jpg"));//Setz ein anderes Icon
         ImageIcon gif = new ImageIcon(ArbeitsUmKordienierer.programmOrdner + "/rickroll.gif");
         JLabel gifContainer= new JLabel(gif);//Macht den Rickrollgif in das Fenster
-        this.getContentPane().add(gifContainer);
+        
         gifContainer.setHorizontalAlignment(JLabel.CENTER);
         gifContainer.setVerticalAlignment(JLabel.BOTTOM);
         gifContainer.setSize(new Dimension(getWidth(), getHeight() - 40));
         ImageIcon schliessen = new ImageIcon(ArbeitsUmKordienierer.programmOrdner + "/schliessen.png"); //Macht das schliesbuten Image
         JButton schliessenKnopf = new JButton(schliessen);
-        this.getContentPane().add(schliessenKnopf);
+        
         schliessenKnopf.setSize(40, 40);
         schliessenKnopf.setLocation(getWidth()-45, 5);
 
@@ -40,7 +40,8 @@ public class Fenster extends JFrame {
         timerDisplay.setSize(50, 20);
         this.getContentPane().add(timerDisplay);
         timerDisplay.setForeground(Color.BLUE);
-        
+        this.getContentPane().add(schliessenKnopf);
+        this.getContentPane().add(gifContainer);
         Timer timer = new Timer(1000,new ActionListener() {//Gibt jede Sekunde eine Action
             public void actionPerformed(ActionEvent e){
                 zeit--;

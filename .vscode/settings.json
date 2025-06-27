@@ -3,6 +3,6 @@
         "."
     ],
     "java.project.referencedLibraries": [
-        "c:\\Users\\vogel\\Downloads\\jna-jpms-5.17.0.jar"
+        "jna-jpms-5.17.0.jar"
     ]
 }
